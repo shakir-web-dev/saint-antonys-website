@@ -139,24 +139,67 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .nav-menu {
-    gap: 25px;
-  }
-  
-  .header-container {
-    padding: 0 30px;
-  }
+/* Mobile logo styles */
+.mobile-logo {
+  display: none;
 }
 
-@media (max-width: 768px) {
+.desktop-logo {
+  display: flex;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header Responsive Design */
+
+/* At 1292px - Nav becomes mobile view */
+@media (max-width: 1292px) {
   .nav-menu {
     display: none;
   }
   
+  .menu-toggle {
+    display: block;
+  }
+  
   .header-container {
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .mobile-logo {
+    display: flex !important;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .desktop-logo {
+    display: none !important;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .header-left,
+  .header-right {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 30px;
   }
   
   .donate-btn {
@@ -176,7 +219,7 @@
   }
   
   .header-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
   
   .donate-btn {

@@ -2,7 +2,7 @@
   background: var(--text-white);
   color: var(--burgundy-dark);
   padding: 80px 0;
-  width: 100vw; /* Full viewport width */
+  width: 100vw;
 }
 
 .events-section {
@@ -67,4 +67,33 @@
   font-size: 12px;
   opacity: 0.7;
   letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .events-section h2 {
+    font-size: 2rem;
+  }
+  
+  .events-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .content-sections {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .events-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .events-section {
+    padding: 40px 0;
+  }
 }

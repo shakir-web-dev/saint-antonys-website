@@ -35,13 +35,13 @@ body {
   color: var(--text-white);
   overflow-x: hidden;
   background: var(--burgundy-dark);
-  width: 100vw; /* Full viewport width */
+  width: 100vw;
 }
 
 .App {
   background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy-medium) 50%, var(--burgundy-light) 100%);
   min-height: 100vh;
-  width: 100vw; /* Full viewport width */
+  width: 100vw;
   overflow-x: hidden;
 }
 

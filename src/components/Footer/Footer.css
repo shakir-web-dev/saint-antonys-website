@@ -4,10 +4,33 @@
   text-align: center;
   padding: 40px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100vw;
 }
 
 .footer p {
   font-size: 12px;
   letter-spacing: 2px;
   opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+  
+  .footer p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 0;
+  }
+  
+  .footer p {
+    font-size: 10px;
+  }
 }

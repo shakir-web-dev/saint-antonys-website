@@ -141,24 +141,223 @@
 
 /* Show/Hide Elements Based on Screen Size */
 .mobile-logo {
-  display: none; /* Hidden on desktop */
+  display: none;
 }
 
 .desktop-logo {
-  display: flex; /* Visible on desktop */
+  display: flex;
 }
 
 .desktop-only {
-  display: block; /* Visible on desktop */
+  display: block;
 }
 
 .mobile-only {
-  display: none; /* Hidden on desktop */
+  display: none;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 350px;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #8B0000 0%,
+    #A0002A 50%,
+    #DC143C 100%
+  );
+  z-index: 1999;
+  padding: 30px 0;
+  overflow-y: auto;
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 30px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+}
+
+.mobile-menu-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mobile-menu-logo-svg {
+  width: 45px;
+  height: 55px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
+}
+
+.mobile-menu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+/* Mobile Menu Navigation */
+.mobile-menu-nav {
+  padding: 0 30px;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu-list li {
+  margin-bottom: 8px;
+}
+
+.mobile-menu-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.mobile-menu-link:hover::before {
+  left: 100%;
+}
+
+.mobile-menu-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
+  color: #DAA520;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Donate Button */
+.mobile-menu-donate {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-donate-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #DAA520, #B8860B);
+  border: none;
+  color: white;
+  padding: 18px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.mobile-donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+  background: linear-gradient(45deg, #B8860B, #DAA520);
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer {
+  padding: 30px;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-footer p {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+}
+
+.mobile-menu-footer span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 /* Mobile Responsive Design - At 1292px and below */
 @media (max-width: 1292px) {
-  /* Keep header container as single row */
   .header-container {
     display: flex;
     flex-direction: row;
@@ -167,40 +366,39 @@
     padding: 0 30px;
   }
   
-  /* Hide desktop navigation */
+  /* Hide desktop elements */
   .nav-menu {
     display: none;
   }
   
-  /* Hide desktop donate button */
   .desktop-only {
     display: none !important;
   }
   
-  /* Show mobile logo on left */
+  .desktop-logo {
+    display: none !important;
+  }
+  
+  /* Show mobile elements */
   .mobile-logo {
     display: flex !important;
     justify-content: flex-start;
   }
   
-  /* Hide desktop logo */
-  .desktop-logo {
-    display: none !important;
+  .mobile-only {
+    display: block !important;
   }
   
-  /* Left side - Logo */
   .header-left {
     flex: 0 0 auto;
     justify-content: flex-start;
   }
   
-  /* Right side - Menu button */
   .header-right {
     flex: 0 0 auto;
     justify-content: flex-end;
   }
   
-  /* Center section hidden on mobile */
   .header-center {
     display: none;
   }
@@ -219,6 +417,10 @@
   .church-logo-svg {
     width: 28px;
     height: 32px;
+  }
+  
+  .mobile-menu {
+    width: 320px;
   }
 }
 
@@ -243,6 +445,21 @@
   
   .church-logo {
     padding: 6px;
+  }
+  
+  .mobile-menu {
+    width: 300px;
+  }
+  
+  .mobile-menu-link {
+    font-size: 22px;
+  }
+}
+
+/* Hide menu button on desktop completely */
+@media (min-width: 1293px) {
+  .menu-toggle {
+    display: none !important;
   }
 }
 

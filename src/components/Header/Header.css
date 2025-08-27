@@ -5,7 +5,6 @@
   right: 0;
   width: 100%;
   z-index: 1000;
-  /* Transparent by default */
   background: transparent;
   backdrop-filter: none;
   padding: 15px 0;
@@ -13,7 +12,6 @@
   border-bottom: none;
 }
 
-/* Header when scrolled - Red background */
 .header.scrolled {
   background: rgba(139, 0, 0, 0.95);
   backdrop-filter: blur(15px);
@@ -30,13 +28,15 @@
   padding: 0 40px;
 }
 
-/* Left side - Donate */
+/* Left side - Logo (mobile) / Donate (desktop) */
 .header-left {
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
+/* Desktop donate button */
 .donate-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -88,7 +88,7 @@
   color: white;
 }
 
-/* Church Logo in Navigation */
+/* Church Logo Styles */
 .logo-item {
   margin: 0 10px;
 }
@@ -139,77 +139,86 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile logo styles */
+/* Show/Hide Elements Based on Screen Size */
 .mobile-logo {
-  display: none;
+  display: none; /* Hidden on desktop */
 }
 
 .desktop-logo {
-  display: flex;
+  display: flex; /* Visible on desktop */
 }
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.desktop-only {
+  display: block; /* Visible on desktop */
 }
 
-/* Header Responsive Design */
+.mobile-only {
+  display: none; /* Hidden on desktop */
+}
 
-/* At 1292px - Nav becomes mobile view */
+/* Mobile Responsive Design - At 1292px and below */
 @media (max-width: 1292px) {
+  /* Keep header container as single row */
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+  }
+  
+  /* Hide desktop navigation */
   .nav-menu {
     display: none;
   }
   
-  .menu-toggle {
-    display: block;
+  /* Hide desktop donate button */
+  .desktop-only {
+    display: none !important;
   }
   
-  .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
+  /* Show mobile logo on left */
   .mobile-logo {
     display: flex !important;
-    justify-content: center;
-    margin-bottom: 10px;
+    justify-content: flex-start;
   }
   
+  /* Hide desktop logo */
   .desktop-logo {
     display: none !important;
   }
   
-  .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  /* Left side - Logo */
+  .header-left {
+    flex: 0 0 auto;
+    justify-content: flex-start;
   }
   
-  .header-left,
+  /* Right side - Menu button */
   .header-right {
     flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+  
+  /* Center section hidden on mobile */
+  .header-center {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .header-container {
-    padding: 0 30px;
-  }
-  
-  .donate-btn {
-    font-size: 10px;
-    padding: 6px 16px;
+    padding: 0 25px;
   }
   
   .menu-toggle {
     font-size: 10px;
     padding: 8px 16px;
+  }
+  
+  .church-logo-svg {
+    width: 28px;
+    height: 32px;
   }
 }
 
@@ -222,18 +231,22 @@
     padding: 0 20px;
   }
   
-  .donate-btn {
-    font-size: 9px;
-    padding: 5px 12px;
-  }
-  
   .menu-toggle {
     font-size: 9px;
     padding: 6px 12px;
   }
+  
+  .church-logo-svg {
+    width: 25px;
+    height: 30px;
+  }
+  
+  .church-logo {
+    padding: 6px;
+  }
 }
 
-/* Additional hover effects for scrolled state */
+/* Hover effects for scrolled state */
 .header.scrolled .nav-link:hover {
   color: #DAA520;
 }

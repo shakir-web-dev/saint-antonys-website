@@ -12,32 +12,30 @@
 }
 
 /* Church Background Image */
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.hero-section {
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  background-image: url('/images/church-hero.jpg');
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  /* Single comprehensive background with overlay */
+  background: 
+    linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.523) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url('/images/church-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(139, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background-attachment: fixed; /* Optional parallax effect */
 }
 
 /* Hero Content */

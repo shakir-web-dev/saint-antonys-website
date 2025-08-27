@@ -1,0 +1,70 @@
+.content-sections {
+  background: var(--text-white);
+  color: var(--burgundy-dark);
+  padding: 80px 0;
+  width: 100vw; /* Full viewport width */
+}
+
+.events-section {
+  text-align: center;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.events-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.church-info {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.church-logo-small {
+  margin-bottom: 40px;
+}
+
+.church-logo-small p:first-of-type {
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.church-logo-small p:last-of-type {
+  font-size: 12px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+.events-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.events-section h3 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.events-section em {
+  font-style: italic;
+  color: var(--burgundy-light);
+}
+
+.authority-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.authority-section p {
+  font-size: 12px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}

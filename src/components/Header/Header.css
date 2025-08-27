@@ -5,10 +5,20 @@
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(139, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
+  /* Transparent by default */
+  background: transparent;
+  backdrop-filter: none;
   padding: 15px 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  border-bottom: none;
+}
+
+/* Header when scrolled - Red background */
+.header.scrolled {
+  background: rgba(139, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -17,7 +27,7 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 40px;
 }
 
 /* Left side - Donate */
@@ -29,7 +39,7 @@
 
 .donate-btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   color: white;
   padding: 8px 20px;
   border-radius: 25px;
@@ -38,13 +48,15 @@
   font-weight: 400;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .donate-btn:hover {
   background: rgba(255, 255, 255, 0.1);
+  border-color: white;
 }
 
-/* Center - Navigation */
+/* Center - Navigation with Logo */
 .header-center {
   flex: 2;
   display: flex;
@@ -65,13 +77,41 @@
   text-decoration: none;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   transition: all 0.3s ease;
   text-transform: uppercase;
+  position: relative;
+  padding: 5px 0;
 }
 
 .nav-link:hover {
   color: white;
+}
+
+/* Church Logo in Navigation */
+.logo-item {
+  margin: 0 10px;
+}
+
+.church-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.church-logo:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.church-logo-svg {
+  width: 30px;
+  height: 35px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Right side - Menu */
@@ -90,15 +130,26 @@
   cursor: pointer;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .menu-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 25px;
+  }
+  
+  .header-container {
+    padding: 0 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -107,4 +158,43 @@
   .header-container {
     padding: 0 20px;
   }
+  
+  .donate-btn {
+    font-size: 10px;
+    padding: 6px 16px;
+  }
+  
+  .menu-toggle {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .donate-btn {
+    font-size: 9px;
+    padding: 5px 12px;
+  }
+  
+  .menu-toggle {
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+}
+
+/* Additional hover effects for scrolled state */
+.header.scrolled .nav-link:hover {
+  color: #DAA520;
+}
+
+.header.scrolled .church-logo:hover {
+  background: rgba(218, 165, 32, 0.2);
 }
